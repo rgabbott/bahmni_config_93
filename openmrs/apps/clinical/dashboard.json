@@ -56,7 +56,7 @@
                     "title": null,
                     "maximumNoOfVisits": 255
                 },
-                "formGroup": [ "ENT Assessment","ENT Intervention"],
+                "formGroup": [ "Speech Assessment for Patient 0 to 3yrs","Speech Assessment for Patient 3yrs and older","Speech Intervention for Patient 0 to 3yrs","Speech Intervention for Patient 3yrs and older"],
                 "translationKey": "DASHBOARD_TITLE_SPEECH_THERAPY_SERVICE_KEY"
             },
             "DENTAL AND ORTHODONTIC Service": {
@@ -76,7 +76,7 @@
                     "title": null,
                     "maximumNoOfVisits": 255
                 },
-                "formGroup": [ "ENT Assessment","ENT Intervention"],
+                "formGroup": [ "ENT Assessment","ENT Intervention","Nasopharyngeal Endoscopic Assessment"],
                 "translationKey": "DASHBOARD_TITLE_ENT_SERVICE_KEY"
             },
             "SURGERY Service": {
