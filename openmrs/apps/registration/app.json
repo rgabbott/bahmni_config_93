@@ -144,11 +144,11 @@
             "required": true
         },
         "Current Education Level" :{
-            "multiSelect" : true,
+            "multiSelect" : false,
             "required": true
         },
         "Literacy level" :{
-            "multiSelect" : true,
+            "multiSelect" : false,
             "required": true
         },
             "FHS": {
