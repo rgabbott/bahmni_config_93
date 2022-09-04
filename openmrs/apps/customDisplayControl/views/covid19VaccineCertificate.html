@@ -1,0 +1,94 @@
+<div class="template-container">
+    <h2 class="section-title"><span ng-if="dosages.dose2 != null">{{::"DASHBOARD_CERTIFICATE_OF_COVID19_VACCINATION_KEY" | translate}}</span><span ng-if="dosages.dose1 != null && dosages.dose2 == null">{{::"DASHBOARD_COVID19_VACCINE_RECORD_KEY" | translate}}</span></h2>
+    <section>
+        <table class="table-header">
+            <tr>
+                <td>
+                    <span>{{::"DASHBOARD_COVID19_CERTIFICATE_NAME_KEY" | translate}}: {{patient.name}}</span>
+                </td>
+                <td>
+                    <span>{{::"DASHBOARD_COVID19_CERTIFICATE_SEX_KEY" | translate}}: </span><span ng-bind-html="patient.genderText"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>{{::"DASHBOARD_COVID19_CERTIFICATE_AGE_KEY" | translate}}: </span><span ng-bind-html="patient.ageText"></span>
+                </td>
+                <td>
+                    <span>{{::"DASHBOARD_COVID19_CERTIFICATE_DATE_OF_BIRTH_KEY" | translate}}: </span>{{patient.birthdate | date: 'MMM dd, yyyy'}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>{{::"DASHBOARD_COVID19_CERTIFICATE_PASSPORT_NO_KEY" | translate}}: </span>
+                </td>
+                <td>
+                    <span>
+                        {{::"DASHBOARD_COVID19_CERTIFICATE_ADDRESS_KEY" | translate}}: {{patient.address.address1 ? patient.address.address1 + "," : ""}} {{patient.address.address2 ? patient.address.address2 + "," : ""}} {{patient.address.address3 ? patient.address.address3 + "," : ""}}
+                        {{patient.address.cityVillage ? patient.address.cityVillage + "," : ""}} {{patient.address.countyDistrict ? patient.address.countyDistrict + "," : ""}} {{patient.address.stateProvince ? patient.address.stateProvince : ""}}
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <table class="table-header" ng-if="dosages.dose2 != null">
+            <tr>
+                <th>
+                    <h1><span>{{::"DASHBOARD_COVID19_CERTIFICATE_VACCINE_DETAILS_KEY" | translate}}</span></h1>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h2><span>Dose </span>1</h2>
+                    <ul>
+                        <li><span>Date: </span>{{dosages.dose1.date | date: 'MMM dd, yyyy'}}</li>
+                        <li><span>Vaccine Name: </span>{{dosages.vaccineName}}</li>
+                        <li><span>Manufacturer: </span>{{dosages.manufacturer}}</li>
+                        <li><span>Lot Number: </span>{{dosages.dose1.lotNumber}}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2><span>Dose </span>2</h2>
+                    <ul>
+                        <li><span>Date: </span>{{dosages.dose2.date | date: 'MMM dd, yyyy'}}</li>
+                        <li><span>Vaccine Name: </span>{{dosages.vaccineName}}</li>
+                        <li><span>Manufacturer: </span>{{dosages.manufacturer}}</li>
+                        <li><span>Lot Number: </span>{{dosages.dose2.lotNumber}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <table class="table-header" ng-if="dosages.dose1 != null && dosages.dose2 == null">
+            <tr>
+                <th>
+                    <h2><span>{{::"DASHBOARD_COVID19_VACCINE_RECORD_TITLE_KEY" | translate}}</span></h2>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Details of the vaccine</h2>
+                    <ul>
+                        <li><span>Date of Dose 1: </span>{{dosages.dose1.date | date: 'MMM dd, yyyy'}}</li>
+                        <li><span>Vaccine Name: </span>{{dosages.vaccineName}}</li>
+                        <li><span>Manufacturer: </span>{{dosages.manufacturer}}</li>
+                        <li><span>Lot Number: </span>{{dosages.dose1.lotNumber}}</li>
+                        <li><span>Due Date for Next Dose: </span>{{dosages.dose1.dueDate | date: 'MMM dd, yyyy'}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <table class="table-header">
+            <tr>
+                <td>
+                    <ul>
+                        <li><br><br><br><br></li>
+                        <li><span>Signature/Stamp of Designated Officer:</span></li>
+                        <li><span>Name:</span></li>
+                        <li><span>Date:</span></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+</div>
