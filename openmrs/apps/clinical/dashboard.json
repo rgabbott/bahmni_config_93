@@ -76,7 +76,7 @@
                     "title": null,
                     "maximumNoOfVisits": 255
                 },
-                "formGroup": [ "ENT Assessment","ENT Intervention","Nasopharyngeal Endoscopic Assessment"],
+                "formGroup": [ "ENT Assessment","ENT Intervention","ENT Nasopharyngeal Endoscopic Assessment"],
                 "translationKey": "DASHBOARD_TITLE_ENT_SERVICE_KEY"
             },
             "SURGERY Service": {
