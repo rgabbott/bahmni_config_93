@@ -10,7 +10,7 @@
                 "displayOrder":0,
                 "ageLimit":100,
                 "patientAttributes":[  
-
+                    "Ethiopian_Date"
                 ],
                 "addressFields":[  
                     "address1",
