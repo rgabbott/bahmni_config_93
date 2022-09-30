@@ -26,7 +26,20 @@
             ]
         }
     },
-    "ConceptReport": {
+    "PatientDetailReport": {
+        "name": "Patient Detail Report",
+        "type": "MRSGeneric",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Patient_Detail.sql"
+         }
+      },
+    "PatientSummaryReport": {
+        "name": "Patient Summary Report",
+        "type": "MRSGeneric",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Patient_Summary.sql"
+         }
+      },    "ConceptReport": {
         "name": "My Concept Report",
         "type": "MRSGeneric",
         "config": {
