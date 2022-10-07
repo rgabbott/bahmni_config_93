@@ -9,16 +9,6 @@
     "order": 1,
     "requiredPrivilege": "app:registration"
   },
-  "programs": {
-    "id": "bahmni.programs",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
-    "url": "../clinical/#/programs/patient/search",
-    "icon": "icon-bahmni-program",
-    "order": 2,
-    "requiredPrivilege": "app:clinical"
-  },
   "clinical": {
     "id": "bahmni.clinical",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -28,6 +18,16 @@
     "icon": "fa-stethoscope",
     "order": 3,
     "requiredPrivilege": "app:clinical"
+  },
+  "orders": {
+    "id": "bahmni.orders",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_ORDERS_KEY",
+    "url": "../orders/#/search",
+    "icon": "icon-bahmni-orders",
+    "order": 10,
+    "requiredPrivilege": "app:orders"
   },
   "adt": {
     "id": "bahmni.adt",
@@ -80,16 +80,6 @@
     "order": 7,
     "requiredPrivilege": "app:admin"
   },
-  "orders": {
-    "id": "bahmni.orders",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_ORDERS_KEY",
-    "url": "../orders/#/search",
-    "icon": "icon-bahmni-orders",
-    "order": 10,
-    "requiredPrivilege": "app:orders"
-  },
   "reports": {
     "id": "bahmni.reports",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -137,7 +127,7 @@
     "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
     "url": "../../appointments-v2",
     "icon": "fa fa-calendar",
-    "order": 14,
+    "order": 5,
     "requiredPrivilege": "app:appointments"
   }
 

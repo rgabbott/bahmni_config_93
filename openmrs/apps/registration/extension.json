@@ -42,19 +42,19 @@
             "required":true,
             "showLatest": true
         },
-        "order": 1,
+        "order": 2,
         "requiredPrivilege": "Edit Visits"
     },
-    "feeInformation":{
-        "id": "bahmni.registration.conceptSetGroup.feeInformation",
+    "visitDetails":{
+        "id": "bahmni.registration.conceptSetGroup.visitDetails",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Fee Information",
-            "translationKey": "FEE_INFORMATION_LOCALE_KEY",
+            "conceptName": "Visit Details",
+            "translationKey": "VISIT_INFORMATION_LOCALE_KEY",
             "required":true
         },
-        "order": 2,
+        "order": 1,
         "requiredPrivilege": "Edit Visits"
     },
     "nutritionalValue":{

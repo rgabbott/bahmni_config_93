@@ -1,128 +1,179 @@
-{
-        "id": "bahmni.registration",
-        "instanceOf":"bahmni.template.registration",
-        "description": "Bahmni Patient Registration App",
-        "extensionPoints": [
-            {
-                "id": "org.bahmni.registration.patient.search.result.action",
-                "description": "Bahmni Patient Search Result Action"
-            },
-            {
-                "id": "org.bahmni.registration.patient.next",
-                "description": "After Bahmni Patient Registration, forward url configuration"
-            },
-            {
-                "id": "org.bahmni.registration.navigation",
-                "description": "Navigation within regsitration first and second page"
-            },
-            {
-                "id": "org.bahmni.registration.conceptSetGroup.observations",
-                "description": "Registration Second Page Forms"
-            }
-        ],
-        "contextModel": [
-            "patientUuid",
-            "activeVisitUuid"
-        ],
-        "config" : {
-            "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
-                    "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster",
-                        "email"
-                    ]
-                },
-                "hidden": {
-                    "attributes": [
-                        "primaryContact"
-                    ]
-                },
-                "defaults":  {
-                    "class": "General",
-                    "landHolding": 2
-                }
-            },
-            "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
-            },
-            "relationshipTypeMap": {
-                "Doctor":"provider",
-                "Parent":"patient"
-            },
 
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "OPD",
-            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": true,
-            "showLastName": true,
-            "isLastNameMandatory": true,
-            "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
-            "showSaveConfirmDialog": false,
-            "showBirthTime": true,
-            "showCasteSameAsLastNameCheckbox": false,
-            "printOptions": [
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
-                    "shortcutKey": "c"
-                }
-            ],
-            "conceptSetUI": {
-                "REGISTRATION FEES": {
-                    "required": true,
-                    "label": "Fee"
-                },
-                "FHS": {
-                    "buttonSelect": true
-                },
-                "defaults":{
-                    "FHS": "Present"
-                }
-            },
-            "fieldValidation" : {
-                "email" : {"pattern" : "^(?=.{1,40}$)(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,4})$", "errorMessage" : "Should be a valid email address"},
-                "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
-                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
-            },
-            "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
-                "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
-                }
-            }
+{
+    "id": "bahmni.registration",
+    "instanceOf":"bahmni.template.registration",
+    "description": "Bahmni Patient Registration App",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.registration.patient.search.result.action",
+            "description": "Bahmni Patient Search Result Action"
+        },
+        {
+            "id": "org.bahmni.registration.patient.next",
+            "description": "After Bahmni Patient Registration, forward url configuration"
+        },
+        {
+            "id": "org.bahmni.registration.navigation",
+            "description": "Navigation within regsitration first and second page"
+        },
+        {
+            "id": "org.bahmni.registration.conceptSetGroup.observations",
+            "description": "Registration Second Page Forms"
         }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "activeVisitUuid"
+    ],
+    "config" : {
+        "patientInformation": {
+            
+        "patientContactInformation": {
+            "title": "patientContactInformation",
+            "translationKey": "REGISTRATION_CONTACT_INFORMATION",
+            "attributes": ["First Name"],
+            "order" : 2,
+            "expanded": true
+    },
+        "patientFirstContactInformationSection": {
+            "title": "patientFirstContactInformationSection",
+            "translationKey": "REGISTRATION_PATIENT_FIRST_CONTACT_SECTION_INFO_KEY",
+            "attributes": ["First Contact First Name","First Contact Middle Name","First Contact Last Name","First Contact Relationship to Patient","First Contact Street Address 1","First Contact Street Address 2","First Contact City","First Contact District","First Contact Regional State","First Contact Country","First Contact Home Phone","First Contact Mobile Phone","First Contact Email Address","First Contact Comment"],
+            "order" : 3,
+            "expanded": true
+    },
+        "patientSecondContactInformation": {
+            "title": "patientSecondContactInformation",
+            "translationKey": "REGISTRATION_PATIENT_SECOND_CONTACT_INFORMATION",
+            "attributes": ["Second Contact First Name","Second Contact Middle Name","Second Contact Last Name","Second Contact Relationship to Patient","Second Contact Street Address 1","Second Contact Street Address 2","Second Contact City","Second Contact District","Second Contact Regional State","Second Contact Country","Second Contact Home Phone","Second Contact Mobile Phone","Second Contact Email Address","Second Contact Comment"],
+            "order" : 4,
+            "expanded": true
+    },
+        "patientPregnancyandBirthMedicalHistory": {
+            "title": "patientPregnancyandBirthMedicalHistory",
+            "translationKey": "REGISTRATION_PATIENT_PREGNANCY_AND_BIRTH_MEDICAL_HISTORY",
+            "attributes": ["Were there complications during pregnancy","Were there complications during birth","Did mother take vitamins during pregnancy","Did mother take vitamins before conception","Did mother smoke during pregnancy","Number of previous births","Age of Mother at conception","Age of Father at conception","Did mother have previous abortion","Number of previous abortions","Reason for abortion","Length of pregnancy in months","Pregnancy and Birth Medical History Comment","Medications before conception","Medications during pregnancy","Vitamin A","Vitamin D","Folic Acid","Vitamin B Complex","Zinc","Other Vitamin"],
+            "order" : 5,
+            "expanded": true
+    },
+        "patientFamilyCleftHistory": {
+            "title": "patientFamilyCleftHistory",
+            "translationKey": "REGISTRATION_PATIENT_FAMILY_CLEFT_HISTORY",
+            "attributes": ["Family Cleft History Mother","Family Cleft History Father","Family Cleft History Sister","Family Cleft History Brother","Family Cleft History Maternal Grandmother","Family Cleft History Maternal Grandfather","Family Cleft History Maternal Aunt","Family Cleft History Maternal Uncle","Family Cleft History Paternal Grandmother","Family Cleft History Paternal Grandfather","Family Cleft History Paternal Aunt","Family Cleft History Paternal Uncle","Family Cleft History Cousin on Mothers Side","Family Cleft History Cousin on Fathers Side","Family Cleft History Comment"],
+            "order" : 6,
+            "expanded": true
+},
+        "patientPriorCleftSurgery": {
+            "title": "patientPriorCleftSurgery",
+            "translationKey": "REGISTRATION_PATIENT_PRIOR_CLEFT_SURGERY",
+            "attributes": ["Prior Cleft Surgery Date new","Prior Cleft Surgery Location","Prior Cleft Surgery Diagnosis","Prior Cleft Surgery Type","Prior Cleft Surgery Comment","Prior Cleft Surgery Velopharyngeal Insufficiency"],
+            "order" : 7,
+            "expanded": true
+},
+         "hidden": {
+                "attributes": [
+                    "RationCard",
+                    "Ethiopian_DOB",
+                    "distanceFromCenter",
+                    "isUrban",
+                    "cluster",
+                    "debt",
+                    "primaryContact",
+                    "Ethiopian_Date"
+                ]
+            },
+            "defaults":  {
+                "class": "General",
+                "landHolding": 12
+            }
+        },
+        "addressHierarchy": {
+            "showAddressFieldsTopDown": true,
+            "strictAutocompleteFromLevel": "stateProvince"
+        },
+        "relationshipTypeMap": {
+            "Doctor":"provider",
+            "Parent":"patient"
+        },
+
+        "isLastNameMandatory": true,
+        "isPhotoCaptureMandatory": true,
+        "autoCompleteFields":["familyName", "caste"],
+        "defaultIdentifierPrefix": "YCC",
+        "mandatoryPersonAttributes": ["Consent form signed","First Name of Mother","Second Name of Mother","Third Name of Mother","First Contact City","First Contact Country"],
+        "defaultVisitType": "OPD",
+        "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+        "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard", 
+        "showMiddleName": true,
+        "showLastName": true,
+        "showSaveConfirmDialog": false,
+        "showBirthTime": false,
+        "showCasteSameAsLastNameCheckbox": false,
+        "printOptions": [
+            {
+                "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
+                "shortcutKey": "l"
+            },
+            {
+                "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                "shortcutKey": "p"
+            },
+            {
+                "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                "shortcutKey": "r"
+            },
+            {
+                "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
+                "shortcutKey": "c"
+            }
+        ],
+        "conceptSetUI": {
+            "REGISTRATION FEES": {
+                "required": false,
+                "label": "Fee"
+            },
+           "Purpose of the Visit" :{
+            "required": true,
+            "multiSelect": true
+        },
+             "Accompanying the Patient" :{
+            "multiSelect" : true,
+            "required": true
+        },
+        "Current Education Level" :{
+            "multiSelect" : false,
+            "required": true
+        },
+        "Literacy level" :{
+            "multiSelect" : false,
+            "required": true
+        },
+            "FHS": {
+                "buttonSelect": true
+            },
+            "defaults":{
+                "FHS": "Present"
+            }
+        },
+        "fieldValidation" : {
+            "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
+            "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
+            "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
+            "givenName" : {"pattern" : "[a-zA-Z ]{0,}", "errorMessage" : "Should contain characters and space"},
+            "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
+            "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
+            },
+          "patientSearch": {
+            "address": {
+                "label": "Address",
+                "placeholder": "Enter Address",
+                "field": "address2"
+            }
+}
+        
+}
 }
