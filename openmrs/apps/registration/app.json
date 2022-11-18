@@ -78,7 +78,8 @@
                     "isUrban",
                     "cluster",
                     "debt",
-                    "primaryContact"
+                    "primaryContact",
+                    "Ethiopian_Date"
                 ]
             },
             "defaults":  {
