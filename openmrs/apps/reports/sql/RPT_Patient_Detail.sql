@@ -11,7 +11,7 @@ Select
 , p.patient_gender                    as 'Sex'
 , p.type_of_cleft                     as 'Type of Cleft'
 , p.treatment_plan_exists             as 'Treatment Plan?'
-, if(p.patient_create_date>='#startDate#','N','E')  as 'New Patient?'                -- If Patient Registration date = or > beginning of reporting period, set to "N". Else "E"
+,if(p.patient_create_date>='#startDate#','N','E')  as 'New Patient?'                -- If Patient Registration date = or > beginning of reporting period, set to "N". Else "E"
 , if(p.is_closed_Discharge,'C',if(p.is_closed_Lost_Contact,"D","A")) as 'Status:'
 											-- Patient Status A = Active D = Drop Out C = Completed all treatment
                                             -- Based on Patient Case Status on the Patient Treatment Plan OBS form. 
@@ -29,21 +29,21 @@ Select
     ELSE ''
   END
   AS 'School Status' 
-/*
-  ,"|" as 'Extras:'
-, p.Current_Education_Level
-, p.registration_date
-, p.patient_create_date                                -- date part only no time
+--   ,"|" as 'Extras:'
+-- , p.Current_Education_Level
+-- , p.registration_date
+-- , p.patient_create_date                                -- date part only no time
 , p.patient_age_at_registration
 , p.patient_age_now                       -- age in just 0 decimal
-,p.is_closed_Discharge
-,p.is_closed_Lost_Contact
-*/
-from RPT_View_Patient_Detail p
+-- ,p.is_closed_Discharge
+-- ,p.is_closed_Lost_Contact
+-- ,'v: #startDate#' as startDate_Text
+from YCC_view_RPT_Patient_Detail p
 WHERE p.internal_patient_id in 
 (select distinct v.patient_id 
    from visit v 
- where v.date_stopped BETWEEN '#startDate#' and '#endDate#'
- -- BETWEEN @start_date AND @end_date
+  where v.date_stopped 
+    BETWEEN '#startDate#' and '#endDate#'
+  -- BETWEEN @start_date AND @end_date
 )
 ;
