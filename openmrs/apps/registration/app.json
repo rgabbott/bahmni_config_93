@@ -59,7 +59,7 @@
         "patientFamilyCleftHistory": {
             "title": "patientFamilyCleftHistory",
             "translationKey": "REGISTRATION_PATIENT_FAMILY_CLEFT_HISTORY",
-            "attributes": ["Family Cleft History Mother","Family Cleft History Father","Family Cleft History Sister","Family Cleft History Brother","Family Cleft History Maternal Grandmother","Family Cleft History Maternal Grandfather","Family Cleft History Maternal Aunt","Family Cleft History Maternal Uncle","Family Cleft History Paternal Grandmother","Family Cleft History Paternal Grandfather","Family Cleft History Paternal Aunt","Family Cleft History Paternal Uncle","Family Cleft History Cousin on Mothers Side","Family Cleft History Cousin on Fathers Side","Family Cleft History Comment"],
+            "attributes": ["Family Cleft History Mother","Family Cleft History Father","Family Cleft History Sister","Family Cleft History Brother","Family Cleft History Maternal Grandmother","Family Cleft History Maternal Grandfather","Family Cleft History Maternal Aunt","Family Cleft History Maternal Uncle","Family Cleft History Paternal Grandmother","Family Cleft History Paternal Grandfather","Family Cleft History Paternal Aunt","Family Cleft History Paternal Uncle","Family Cleft History Cousin on Mothers Side","Family Cleft History Cousin on Fathers Side","Family Cleft History Comment","No Family Cleft History"],
             "order" : 6,
             "expanded": true
 },
@@ -100,7 +100,7 @@
         "isPhotoCaptureMandatory": true,
         "autoCompleteFields":["familyName", "caste"],
         "defaultIdentifierPrefix": "YCC",
-        "mandatoryPersonAttributes": ["Consent form signed","First Name of Mother","Second Name of Mother","Third Name of Mother","First Contact City","First Contact Country"],
+        "mandatoryPersonAttributes": ["Consent form signed","First Contact Relationship to Patient","First Name of Mother","Second Name of Mother","Third Name of Mother","First Contact City","First Contact Country"],
         "defaultVisitType": "OPD",
         "searchByIdForwardUrl": "/patient/{{patientUuid}}",
         "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard", 
