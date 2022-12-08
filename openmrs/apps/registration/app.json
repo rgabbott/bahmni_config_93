@@ -66,7 +66,7 @@
         "patientPriorCleftSurgery": {
             "title": "patientPriorCleftSurgery",
             "translationKey": "REGISTRATION_PATIENT_PRIOR_CLEFT_SURGERY",
-            "attributes": ["Prior Cleft Surgery Date new","Prior Cleft Surgery Location","Prior Cleft Surgery Diagnosis","Prior Cleft Surgery Type","Prior Cleft Surgery Comment","Prior Cleft Surgery Velopharyngeal Insufficiency"],
+            "attributes": ["Previous Surgery Date new","Previous Surgery Location","Previous Surgery Diagnosis","Previous Surgery Type","Previous Surgery Comment","Previous Surgery Velopharyngeal Insufficiency"],
             "order" : 7,
             "expanded": true
 },
