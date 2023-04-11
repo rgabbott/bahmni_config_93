@@ -1,4 +1,31 @@
 {
+    "visitReport10": {
+        "name": "Visit Report",
+        "type": "visits",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "applyDateRangeFor": "visitStopDate",
+            "visitTypesToFilter": [
+                "YCC Clinic"
+            ]
+        }
+    },
     "PatientDetailReport": {
         "name": "Patient Detail Report",
         "type": "MRSGeneric",
@@ -38,32 +65,5 @@
         "config": {
          "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Service_Detail.sql"
          }
-      },
- 	"visitReport10": {
-        "name": "Visit Report",
-        "type": "visits",
-        "requiredPrivilege": "app:reports",
-        "config": {
-            "forDataAnalysis": true,
-            "patientAttributes": [
-                "caste",
-                "class",
-                "education",
-                "occupation",
-                "primaryContact"
-            ],
-            "visitAttributes": [
-                "Visit Status",
-                "Admission Status"
-            ],
-            "patientAddresses": [
-                "address3",
-                "city_village"
-            ],
-            "applyDateRangeFor": "visitStopDate",
-            "visitTypesToFilter": [
-                "YCC Clinic"
-            ]
-        }
-    }
+      }
 }

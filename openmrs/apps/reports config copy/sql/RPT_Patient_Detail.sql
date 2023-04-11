@@ -43,7 +43,7 @@ WHERE p.internal_patient_id in
 (select distinct v.patient_id 
    from visit v 
   where v.date_stopped 
-   BETWEEN '#startDate#' and '#endDate#'
-  -- BETWEEN '2000/1/1' AND '2030/1/1'
+    BETWEEN '#startDate#' and '#endDate#'
+  -- BETWEEN @start_date AND @end_date
 )
 ;
