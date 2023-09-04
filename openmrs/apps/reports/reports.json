@@ -1,0 +1,69 @@
+{ 
+    "PatientDetailReport": {
+        "name": "Patient Detail Report",
+        "type": "MRSGeneric",
+	"requiredPrivilege": "app:reports",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Patient_Detail.sql"
+         }
+      },
+    "PatientSummaryReport": {
+        "name": "Patient Summary Report",
+        "type": "MRSGeneric",
+	"requiredPrivilege": "app:reports",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Patient_Summary.sql"
+         }
+      },
+    "InterventionDetailReport": {
+        "name": "Intervention Detail Report",
+        "type": "MRSGeneric",
+	"requiredPrivilege": "app:reports",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Intervention_Detail.sql"
+         }
+      },
+    "InterventionSummaryReport": {
+        "name": "Intervention Summary Report",
+        "type": "MRSGeneric",
+	"requiredPrivilege": "app:reports",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Intervention_Summary.sql"
+         }
+      },
+    "ServiceDetailReport": {
+        "name": "Service Detail Report",
+        "type": "MRSGeneric",
+	"requiredPrivilege": "app:reports",
+        "config": {
+         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/RPT_Service_Detail.sql"
+         }
+      },
+      "visitReport10": {
+        "name": "Visit Report",
+        "type": "visits",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "applyDateRangeFor": "visitStopDate",
+            "visitTypesToFilter": [
+                "YCC Clinic"
+            ]
+        }
+    }
+}

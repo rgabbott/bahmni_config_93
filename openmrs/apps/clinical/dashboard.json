@@ -1,0 +1,434 @@
+{  
+    "general":{  
+        "translationKey":"DASHBOARD_TAB_GENERAL_KEY",
+        "displayByDefault":true,
+        "maxRecentlyViewedPatients":10,
+        "sections":{  
+            "patientInformation":{  
+                "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type":"patientInformation",
+                "displayOrder":0,
+                "ageLimit":100,
+                "patientAttributes":[  
+                    "Ethiopian_Date"
+                ],
+                "addressFields":[  
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countyDistrict"
+                ]
+            },
+            "CASE MANAGEMENT Service": {
+                "type": "formsV2",
+                "displayOrder": 3,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "Diagnosis","Patient Treatment Plan","Vitamins and Medications","Converted Patient to Bahmni"],
+                "translationKey": "DASHBOARD_TITLE_CASE_MANAGEMENT_SERVICE_KEY"
+            },
+            "NUTRITION Service": {
+                "type": "formsV2",
+                "displayOrder": 10,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "Nutrition Assessment","Nutrition Intervention"],
+                "translationKey": "DASHBOARD_TITLE_NUTRITION_SERVICE_KEY"
+            },
+            "SOCIAL WORK Service": {
+                "type": "formsV2",
+                "displayOrder": 20,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "Social Work Assessment","Social Work Intervention"],
+                "translationKey": "DASHBOARD_TITLE_SOCIAL_WORK_SERVICE_KEY"
+            },
+            "SPEECH THERAPY Service": {
+                "type": "formsV2",
+                "displayOrder": 30,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "Speech Assessment for Patient 0 to 3yrs","Speech Assessment for Patient 3yrs and older","Speech Intervention for Patient 0 to 3yrs","Speech Intervention for Patient 3yrs and older"],
+                "translationKey": "DASHBOARD_TITLE_SPEECH_THERAPY_SERVICE_KEY"
+            },
+            "DENTAL AND ORTHODONTIC Service": {
+                "type": "formsV2",
+                "displayOrder": 40,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "Dental and Orthodontic Assessment","Dental and Orthodontic Intervention"],
+                "translationKey": "DASHBOARD_TITLE_DENTAL_AND_ORTHODONTIC_SERVICE_KEY"
+            },
+            "ENT Service": {
+                "type": "formsV2",
+                "displayOrder": 46,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "ENT Assessment","ENT Intervention","ENT Nasopharyngeal Endoscopic Assessment"],
+                "translationKey": "DASHBOARD_TITLE_ENT_SERVICE_KEY"
+            },
+            "SURGERY Service": {
+                "type": "formsV2",
+                "displayOrder": 63,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 255
+                },
+                "formGroup": [ "Surgery Assessment","Surgery Intervention","Surgery Event"],
+                "translationKey": "DASHBOARD_TITLE_SURGERY_SERVICE_KEY"
+            },
+            "forms2Validations": {
+                "type": "formsV2",
+                "displayOrder": 41,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 5
+                },
+                "formGroup": [ ],
+                "translationKey":"DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS"
+            },
+            "navigationLinksControl":{  
+                "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type":"navigationLinksControl",
+                "displayOrder":5,
+                "showLinks":[  
+                    "home",
+                    "registration"
+                ]
+            },
+            "disposition":{  
+                "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
+                "showDetailsButton":true,
+                "type":"disposition",
+                "numberOfVisits":255,
+                "displayOrder":85
+            },
+            "radiology":{  
+                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "type":"radiology",
+                "showDetailsButton":true,
+                "displayOrder":67
+            },
+            "radiologyOrders":{  
+                "orderType":"Radiology Order",
+                "type":"ordersControl",
+                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
+                "displayOrder":80,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                        "Summary"
+                    ],
+                    "numberOfVisits":255
+                }
+            },
+            "nutritionalValues":{  
+                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":48,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                        "HEIGHT",
+                        "Weight",
+                        "BMI Data",
+                        "BMI Status Data"
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":255
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "HEIGHT",
+                        "Weight",
+                        "BMI",
+                        "BMI STATUS"
+                    ],
+                    "numberOfVisits":255,
+                    "scope":"latest",
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            },
+            "vitals":{  
+                "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":27,
+                "dashboardConfig":{  
+                    "showDetailsButton":true,
+                    "conceptNames":[  
+                        "Vitals"
+                    ],
+                    "numberOfVisits":255
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "Vitals"
+                    ],
+                    "numberOfVisits":2,
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+                        "numberOfVisits":"10",
+                        "groupBy":"encounters",
+                        "obsConcepts":[  
+                            "Weight",
+                            "Vitals"
+                        ],
+                        "drugConcepts":[  
+
+                        ],
+                        "labConcepts":[  
+
+                        ]
+                    }
+                }
+            },
+            "visits":{  
+                "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
+                "type":"visits",
+                "displayOrder":13,
+                "dashboardConfig":{  
+                    "title":null,
+                    "maximumNoOfVisits":255,
+                    "groupByVisits":true
+                }
+            },
+            "admissionDetails":{  
+                "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                "type":"admissionDetails",
+                "displayOrder":75,
+                "showDetailsButton":true
+            },
+            "patientAppointments": {
+                "type": "custom",
+                "displayOrder": 38,
+                "config": {
+                    "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
+                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
+                }
+            }
+        }
+    },
+    "trends":{  
+        "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
+        "maxRecentlyViewedPatients":12,
+        "sections":{  
+            "patientInformation":{  
+                "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type":"patientInformation",
+                "patientAttributes":[  
+                    "caste",
+                    "class",
+                    "education",
+                    "occupation",
+                    "debt",
+                    "distanceFromCenter",
+                    "isUrban",
+                    "cluster",
+                    "RationCard",
+                    "familyIncome"
+                ],
+                "addressFields":[  
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countyDistrict"
+                ],
+                "displayOrder":0
+            },
+            "growthChart":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_GROWTH_CHART",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Weight"
+                    ],
+                    "referenceData":"growthChartReference.csv",
+                    "numberOfVisits":20
+                },
+                "displayOrder":1
+            },
+            "BP":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_BLOOD_PRESSURE",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Systolic Data",
+                        "Diastolic Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":2
+            },
+            "weight/BMI":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Weight",
+                        "BMI"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":3
+            },
+            "diabetes/BloodSugar":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_DIABETES_BLOOD_SUGAR",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Blood Sugar Fasting",
+                        "Blood Sugar P.P"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":4
+            },
+            "observationGraph":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_PULSE",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Pulse Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":5
+            },
+            "diabetes":{  
+                "title":"Diabetes",
+                "templateName":"Diabetes, Progress",
+                "type":"diseaseTemplate",
+                "dashboardConfig":{  
+                    "showOnly":[  
+
+                    ]
+                },
+                "expandedViewConfig":{  
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+                        "numberOfVisits":"10",
+                        "groupBy":"visits",
+                        "obsConcepts":[  
+                            "Diabetes, Blood Pressure",
+                            "Diabetes, A1C",
+                            "Diabetes, LDL",
+                            "Diabetes, Ulcers on Feet",
+                            "Blood Sugar Fasting",
+                            "Blood Sugar PP"
+                        ],
+                        "labConcepts":[  
+                            "RBS",
+                            "FBS",
+                            "PP2BS",
+                            "Hb1AC",
+                            "Creatinine",
+                            "Cholesterol"
+                        ]
+                    }
+                },
+                "displayOrder":6
+            }
+        }
+    },
+    "patientSummary":{  
+        "translationKey":"DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+        "maxRecentlyViewedPatients":10,
+        "sections":{  
+            "Bacteriology Concept Set":{  
+                "displayType":"Full-Page",
+                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
+                "type":"obsToObsFlowSheet",
+                "dashboardConfig":{  
+                    "numberOfVisits":1,
+                    "templateName":"BACTERIOLOGY CONCEPT SET",
+                    "groupByConcept":"Specimen Collection Date",
+                    "conceptNames":[  
+                        "Specimen Id"
+                    ]
+                },
+                "expandedViewConfig":{  
+                    "templateName":"BACTERIOLOGY CONCEPT SET",
+                    "groupByConcept":"Specimen Collection Date"
+                }
+            },
+            "HistoryAndExamination":{  
+                "type":"historyAndExamination",
+                "isObservation":true,
+                "displayType":"Full-Page",
+                "dashboardConfig":{  
+                    "showGroupDateTime":false,
+                    "conceptNames":[  
+                        "Chief Complaint Data",
+                        "Examination Notes",
+                        "Smoking History",
+                        "Clief COmplaint Notes",
+                        "Blood Pressure"
+                    ]
+                },
+                "displayOrder":6,
+                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
+            },
+            "drugOther":{  
+                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
+                "type":"drugOrderDetails",
+                "displayType":"Full-Page",
+                "showDetailsButton":true,
+                "displayOrder":24,
+                "dashboardConfig":{  
+                    "showOnlyActive":true,
+                    "drugConceptSet":"All Other Drugs"
+                }
+            },
+            "malaria":{  
+                "title":"Malaria",
+                "type":"obsToObsFlowSheet",
+                "displayType":"Full-Page",
+                "displayOrder":26,
+                "dashboardConfig":{  
+                    "groupByConcept":"Malaria, Treatment Start Date",
+                    "templateName":"Malaria",
+                    "conceptNames":[  
+                        "Malaria, Parents Name",
+                        "Malaria, drug regimen",
+                        "Malaria, Malaria Type",
+                        "Malaria, Source"
+                    ]
+                }
+            },
+            "Chronic Treatment Chart":{  
+                "displayType":"Full-Page",
+                "title":"Chronic Treatment Chart",
+                "type":"chronicTreatmentChart",
+                "dashboardConfig":{  
+                    "drugs":[  
+
+                    ]
+                },
+                "expandedViewConfig":{  
+                    "drugs":[  
+
+                    ]
+                }
+            }
+        }
+    }
+}
