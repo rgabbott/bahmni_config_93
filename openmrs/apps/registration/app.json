@@ -126,11 +126,6 @@
                 "shortcutKey": "r"
             },
             {
-                "translationKey": "REGISTRATION_PRINT_CONSENT_PAPER",
-                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/consent.html",
-                "shortcutKey": "r"
-            },
-            {
                 "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
                 "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
                 "shortcutKey": "c"
