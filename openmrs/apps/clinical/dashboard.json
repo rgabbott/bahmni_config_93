@@ -10,7 +10,7 @@
                 "displayOrder":0,
                 "ageLimit":100,
                 "patientAttributes":[  
-
+                    "Ethiopian_Date"
                 ],
                 "addressFields":[  
                     "address1",
@@ -26,7 +26,7 @@
                     "title": null,
                     "maximumNoOfVisits": 255
                 },
-                "formGroup": [ "Diagnosis","Patient Treatment Plan","Vitamins and Medications"],
+                "formGroup": [ "Diagnosis","Patient Treatment Plan","Vitamins and Medications","Converted Patient to Bahmni"],
                 "translationKey": "DASHBOARD_TITLE_CASE_MANAGEMENT_SERVICE_KEY"
             },
             "NUTRITION Service": {
@@ -76,7 +76,7 @@
                     "title": null,
                     "maximumNoOfVisits": 255
                 },
-                "formGroup": [ "ENT Assessment","ENT Intervention","Nasopharyngeal Endoscopic Assessment"],
+                "formGroup": [ "ENT Assessment","ENT Intervention","ENT Nasopharyngeal Endoscopic Assessment"],
                 "translationKey": "DASHBOARD_TITLE_ENT_SERVICE_KEY"
             },
             "SURGERY Service": {
