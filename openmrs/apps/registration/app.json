@@ -100,7 +100,7 @@
         "isPhotoCaptureMandatory": true,
         "autoCompleteFields":["familyName", "caste"],
         "defaultIdentifierPrefix": "YCC",
-        "mandatoryPersonAttributes": ["Consent form signed","First Contact Relationship to Patient","First Name of Mother","Second Name of Mother","Third Name of Mother","First Contact City","First Contact Country"],
+        "mandatoryPersonAttributes": ["Consent form signed","First Contact Relationship to Patient","First Name of Mother","Second Name of Mother","Third Name of Mother","First Contact City","First Contact Country","Sponsor1"],
         "defaultVisitType": "OPD",
         "searchByIdForwardUrl": "/patient/{{patientUuid}}",
         "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard", 
