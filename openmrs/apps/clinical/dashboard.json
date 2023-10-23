@@ -36,7 +36,7 @@
                     "title": null,
                     "maximumNoOfVisits": 255
                 },
-                "formGroup": [ "Nutrition Assessment","Nutrition Intervention"],
+                "formGroup": [ "Nutrition Assessment","Nutrition Intervention","Oct 10 test new form"],
                 "translationKey": "DASHBOARD_TITLE_NUTRITION_SERVICE_KEY"
             },
             "SOCIAL WORK Service": {
