@@ -4,6 +4,7 @@
 
 Select s.YCC_Service
       ,Count(*) as Service_Total
+      ,Count(*) as New_Service_Total
   FROM 
    (select 
       f.patient_id
