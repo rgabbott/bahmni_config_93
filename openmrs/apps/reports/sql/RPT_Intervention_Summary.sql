@@ -13,8 +13,8 @@ Select s.YCC_Service
     , f.YCC_Service
     , f.YCC_Service_Seq
      from YCC_view_encounter_form f 
-	where (f.visit_date_stopped BETWEEN '#startDate#' and '#endDate#') 
---    where (f.visit_date_stopped BETWEEN '2020/1/1' and '2025/1/1') 
+--	where (f.visit_date_stopped BETWEEN '#startDate#' and '#endDate#') 
+    where (f.visit_date_stopped BETWEEN '2020/1/1' and '2025/1/1') 
      group by f.patient_id, f.encounter_id, f.form_name, f.YCC_Service, f.YCC_Service_Seq
    ) as s
 group by s.YCC_Service,s.YCC_Service_Seq
