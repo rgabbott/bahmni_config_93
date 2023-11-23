@@ -5,7 +5,7 @@ Select
 , p.patient_name                      as 'Patient Name'
 , p.patient_gender                    as 'Gender'
 , f.YCC_Service                       as 'Service'
-,count(*)                             as 'Service Deliveries'
+,COALESCE(count(*),0)+0               as 'Service Deliveries'
 -- , (select coalesce(count(*),0) from YCC_view_encounter_form f where f.patient_id = p.internal_patient_id and (f.visit_date_stopped BETWEEN '#startDate#' and '#endDate#') and f.form_name='Surgery Assessment'                            ) as 'Surg A'
 
 -- , p.patient_birthdate                 as 'DOB'
