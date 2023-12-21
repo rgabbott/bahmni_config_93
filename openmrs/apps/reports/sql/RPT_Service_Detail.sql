@@ -1,22 +1,28 @@
---  Intervention Report
+--  Service Detail Report
 
 Select 
   p.patient_identifier                as 'Patient ID'
 , p.patient_name                      as 'Patient Name'
 , p.patient_gender                    as 'Gender'
 , f.YCC_Service                       as 'Service'
-,COALESCE(count(*),0)+0               as 'Service Deliveries'
--- , (select coalesce(count(*),0) from YCC_view_encounter_form f where f.patient_id = p.internal_patient_id and (f.visit_date_stopped BETWEEN '#startDate#' and '#endDate#') and f.form_name='Surgery Assessment'                            ) as 'Surg A'
+, COALESCE(count(*),0)+0              as 'Service Deliveries'
 
--- , p.patient_birthdate                 as 'DOB'
--- , p.type_of_cleft                     as 'Type of Cleft'
+from 
+(select
+ pid1.patient_id
+,pid1.identifier AS 'patient_identifier'
+,concat(coalesce(per.given_name,''),' ',coalesce(per.middle_name,''),' ',coalesce(per.family_name,'')) AS 'patient_name'
+,p.gender AS 'patient_gender'
+from patient pa 
+inner join person p on pa.patient_id=p.person_id 
+inner join person_name per on pa.patient_id=per.person_id
+inner join patient_identifier pid1 on pa.patient_id=pid1.patient_id and pid1.identifier_type=3 -- 3 = patient_id 4 = Yekatit OPD
+where p.voided = 0 and pa.voided = 0
+) p
 
-from YCC_view_RPT_Patient_Detail p
-left outer join YCC_view_encounter_form f on p.internal_patient_id = f.patient_id
-WHERE p.internal_patient_id in 
-(select distinct v.patient_id 
-   from visit v 
--- where v.date_stopped BETWEEN '2022/8/1' and '2024/1/1'
+left outer join YCC_view_encounter_form f on p.patient_id = f.patient_id
+WHERE p.patient_id in 
+(select distinct v.patient_id from visit v 
 where v.date_stopped BETWEEN '#startDate#' and '#endDate#'
 )
 and f.YCC_Service <>'Other'
