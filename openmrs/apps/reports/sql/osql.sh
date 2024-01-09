@@ -1,1 +1,1 @@
-mysql -uroot -pP@ssw0rd openmrs
+/usr/bin/mysql -uroot -pP@ssw0rd openmrs
